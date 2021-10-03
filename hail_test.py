@@ -16,8 +16,8 @@ hl.init()
 from hail.plot import show
 from pprint import pprint
 hl.plot.output_notebook()
-hl.utils.get_1kg(hail_data)
 hl.import_vcf(hail_data + '1kg.vcf.bgz').write(hail_data + "/1kg.mt", overwrite=True)
+hl.utils.get_1kg(hail_data)
 
 mt = hl.read_matrix_table(hail_data + "/1kg.mt")
 mt.rows().select().show(5)
